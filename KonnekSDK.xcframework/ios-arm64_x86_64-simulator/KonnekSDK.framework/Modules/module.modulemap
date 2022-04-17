@@ -1,0 +1,4 @@
+framework module KonnekSDK {
+  header "KonnekSDK-Swift.h"
+  requires objc
+}

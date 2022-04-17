@@ -1,0 +1,43 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KonnekSDK
+import Foundation
+import MobileCoreServices
+import Swift
+import UIKit
+import UniformTypeIdentifiers
+import _Concurrency
+public class FontManager {
+  @discardableResult
+  public init()
+  @objc deinit
+}
+extension UIKit.UIFont {
+  public static func registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle)
+}
+@objc public protocol KonnekDelegate : ObjectiveC.NSObjectProtocol {
+  @objc optional func konnekUserLoggedIn()
+  @objc optional func konnekUserLoggedOut()
+}
+public class KonnekSDKIOS {
+  public static let shared: KonnekSDK.KonnekSDKIOS
+  public var konnekDelegate: KonnekSDK.KonnekDelegate?
+  public init()
+  public func login(username: Swift.String, email: Swift.String)
+  public func logout()
+  public func goToConversation(viewController: UIKit.UIViewController?)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @available(tvOS, unavailable)
+@_Concurrency.MainActor(unsafe) public class KeyboardLayoutConstraint : UIKit.NSLayoutConstraint {
+  @available(tvOS, unavailable)
+  @objc override dynamic public func awakeFromNib()
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public class KonnekSDKDelegate : ObjectiveC.NSObject {
+  public var applicationDelegate: UIKit.UIApplicationDelegate?
+  @discardableResult
+  public init(delegate: UIKit.UIApplicationDelegate, companyId: Swift.String, channelId: Swift.String)
+  @objc deinit
+}

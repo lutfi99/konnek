@@ -1,17 +1,22 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
+
 import PackageDescription
+
 let package = Package(
     name: "KonnekSDK",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v13)
     ],
     products: [
         .library(
             name: "KonnekSDK",
-            targets: ["KonnekSDK"])
+            targets: ["KonnekSDK"]
+        )
     ],
     targets: [
         .binaryTarget(
-            name: "KonnekSDK", 
-            path: "KonnekSDK.xcframework")
-    ])
+            name: "KonnekSDK",
+            path: "KonnekSDK.xcframework"
+        )
+    ]
+)
